@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Round Robin CPU Scheduling Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">RR</div>
+      <div>
+        <h1>Round Robin Simulator</h1>
+        <p>Operating Systems · CPU Scheduling Lab</p>
+      </div>
+    </div>
+    <span class="status"><span></span> Interactive Lab</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">SCHEDULING ALGORITHM VISUALIZER</p>
+      <h2>Explore the impact of <span>time quantum.</span></h2>
+      <p>
+        Run the same processes with different quantum values and discover
+        how scheduling performance changes.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <h3>Process Configuration</h3>
+          <p>Define the processes competing for CPU time.</p>
+        </div>
+        <button id="sampleBtn" class="btn secondary">Load sample</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Process ID</th>
+              <th>Arrival Time</th>
+              <th>Burst Time</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="processTable"></tbody>
+        </table>
+      </div>
+
+      <button id="addBtn" class="btn secondary add-btn">
+        + Add process
+      </button>
+
+      <div class="settings">
+        <div class="field">
+          <label for="quantum">Simulation Time Quantum</label>
+          <div class="input-unit">
+            <input id="quantum" type="number" min="0.01" step="any" value="2">
+            <span>units</span>
+          </div>
+          <small>Used when you run a single simulation.</small>
+        </div>
+
+        <div class="field">
+          <label for="switchCost">Context-Switch Cost</label>
+          <div class="input-unit">
+            <input id="switchCost" type="number" min="0" step="any" value="0">
+            <span>units</span>
+          </div>
+          <small>Extra time required when switching processes.</small>
+        </div>
+      </div>
+
+      <div class="comparison-settings">
+        <div class="comparison-heading">
+          <div>
+            <h4>Manual Quantum Comparison</h4>
+            <p>Enter the exact three values you want to compare.</p>
+          </div>
+        </div>
+
+        <div class="settings quantum-settings">
+          <div class="field">
+            <label for="quantumSmall">Small Quantum</label>
+            <div class="input-unit">
+              <input id="quantumSmall" type="number" min="0.01" step="any" value="1">
+              <span>units</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="quantumMedium">Medium Quantum</label>
+            <div class="input-unit">
+              <input id="quantumMedium" type="number" min="0.01" step="any" value="4">
+              <span>units</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="quantumLarge">Large Quantum</label>
+            <div class="input-unit">
+              <input id="quantumLarge" type="number" min="0.01" step="any" value="10">
+              <span>units</span>
+            </div>
+          </div>
+        </div>
+        <p class="hint">
+          All three values must be positive and different. They are not
+          generated automatically.
+        </p>
+      </div>
+
+      <div class="actions">
+        <button id="runBtn" class="btn primary">▶ Run simulation</button>
+        <button id="compareBtn" class="btn secondary">
+          Compare quantum values
+        </button>
+      </div>
+
+      <p id="error" class="error" role="alert"></p>
+    </section>
+
+    <section id="results" class="panel" hidden>
+      <div class="section-heading">
+        <div>
+          <h3>Simulation Results</h3>
+          <p id="resultSummary">Execution timeline and performance metrics.</p>
+        </div>
+        <span class="tag">COMPLETED</span>
+      </div>
+
+      <div id="metrics" class="metrics"></div>
+
+      <h4>CPU Execution Timeline</h4>
+      <div id="gantt" class="gantt"></div>
+      <div id="timeline" class="timeline"></div>
+
+      <h4>Process Performance</h4>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Process</th>
+              <th>Burst</th>
+              <th>Completion</th>
+              <th>Turnaround</th>
+              <th>Waiting</th>
+              <th>Response</th>
+            </tr>
+          </thead>
+          <tbody id="resultTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="comparison" class="panel" hidden>
+      <div class="section-heading">
+        <div>
+          <h3>Quantum Performance Comparison</h3>
+          <p id="comparisonSummary">
+            Results for your three manually entered quantum values.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrap" id="comparisonContent"></div>
+
+      <h4>Average Waiting Time</h4>
+      <div id="waitingChart" class="bar-chart"></div>
+
+      <h4>Context Switches</h4>
+      <div id="switchChart" class="bar-chart"></div>
+
+      <div class="explanation" id="comparisonExplanation"></div>
+    </section>
+  </main>
+
+  <footer>Round Robin CPU Scheduling · Operating Systems Project</footer>
+  <script src="script.js"></script>
+</body>
+</html>

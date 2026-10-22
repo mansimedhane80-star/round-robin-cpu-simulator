@@ -1,0 +1,556 @@
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #263047;
+  background: #f5f6fc;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f6fc;
+}
+
+/* Header */
+.topbar {
+  min-height: 82px;
+  padding: 16px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #e7e9f2;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-icon {
+  background: #7164f4;
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-weight: 800;
+}
+
+h1, h2, h3, h4, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.brand p, .section-heading p {
+  color: #788197;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.status {
+  color: #25845d;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.status span {
+  display: inline-block;
+  background: #38c98b;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* Page layout */
+.container {
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.intro {
+  padding: 45px 0 28px;
+}
+
+.eyebrow {
+  color: #7164d9;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.intro h2 {
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #263047;
+}
+
+.intro h2 span {
+  color: #7164f4;
+}
+
+.intro > p:last-child {
+  color: #788197;
+  line-height: 1.7;
+  max-width: 670px;
+}
+
+/* Main panels */
+.panel {
+  background: #fff;
+  border: 1px solid #e7e9f2;
+  border-radius: 17px;
+  padding: 25px;
+  margin-bottom: 22px;
+  min-width: 0;
+  box-shadow: 0 4px 18px rgba(45, 52, 90, 0.035);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
+  color: #263047;
+}
+
+h4 {
+  margin: 28px 0 15px;
+  font-size: 15px;
+  color: #303a51;
+}
+
+.comparison-heading {
+  margin-bottom: 8px;
+}
+
+.comparison-heading h4 {
+  margin: 0 0 7px;
+}
+
+.comparison-heading p {
+  color: #788197;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.comparison-settings {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #e9e7fa;
+  border-radius: 13px;
+  background: #fbfaff;
+}
+
+/* Tables */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  color: #667085;
+  font-size: 12px;
+  font-weight: 600;
+  background: #f5f6fb;
+}
+
+th, td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #edf0f6;
+}
+
+td {
+  font-size: 13px;
+  color: #39445c;
+  white-space: nowrap;
+}
+
+tbody tr:hover {
+  background: #fafaff;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  background: #fafbff;
+  color: #263047;
+  border: 1px solid #dfe3ef;
+  border-radius: 8px;
+  padding: 10px;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+}
+
+input:focus {
+  border-color: #958bff;
+  box-shadow: 0 0 0 3px rgba(113, 100, 244, 0.09);
+}
+
+td input {
+  min-width: 80px;
+}
+
+.input-unit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-unit input {
+  max-width: 190px;
+}
+
+.input-unit span {
+  color: #788197;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Buttons */
+.btn {
+  padding: 11px 15px;
+  border: 1px solid #e2e4ef;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 650;
+  font-size: 13px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  filter: brightness(0.98);
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #c5bfff;
+  outline-offset: 2px;
+}
+
+.primary {
+  background: #7164f4;
+  color: #fff;
+  border-color: #7164f4;
+}
+
+.primary:hover {
+  background: #6254e8;
+}
+
+.secondary {
+  background: #f0efff;
+  color: #5b50bd;
+  border-color: #e4e0ff;
+}
+
+.secondary:hover {
+  background: #e8e5ff;
+}
+
+.add-btn {
+  margin-top: 14px;
+}
+
+/* Settings */
+.settings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  border-top: 1px solid #edf0f6;
+  margin-top: 24px;
+  padding-top: 23px;
+}
+
+.quantum-settings {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: none;
+  margin-top: 15px;
+  padding-top: 0;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #303a51;
+}
+
+.field small {
+  display: block;
+  color: #788197;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 9px;
+}
+
+.hint {
+  margin: 16px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #788197;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.error {
+  color: #d33b4a;
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Metrics */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metric {
+  background: #f7f7ff;
+  border: 1px solid #e8e7f6;
+  padding: 17px;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.metric span {
+  display: block;
+  color: #788197;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.metric strong {
+  font-size: 23px;
+  color: #5548cb;
+  overflow-wrap: anywhere;
+}
+
+/* Gantt chart */
+.gantt {
+  display: flex;
+  width: 100%;
+  min-height: 65px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #f0f2f8;
+}
+
+.gantt-block {
+  min-width: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #fff;
+  color: #fff;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.gantt-block strong {
+  font-size: 12px;
+}
+
+.gantt-block small {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.timeline {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  color: #788197;
+  font-size: 10px;
+}
+
+.timeline span {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Status tag */
+.tag {
+  color: #25845d;
+  font-size: 12px;
+  border: 1px solid #cceedd;
+  background: #f0fbf5;
+  padding: 7px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Comparison bar charts */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 75px;
+  gap: 12px;
+  align-items: center;
+}
+
+.bar-label {
+  color: #4a536a;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.bar-track {
+  height: 25px;
+  border-radius: 6px;
+  background: #f0f1f8;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  min-width: 0;
+  transition: width 0.3s ease;
+}
+
+.bar-value {
+  color: #4a536a;
+  font-size: 12px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.explanation {
+  margin-top: 24px;
+  padding: 17px;
+  border-radius: 11px;
+  background: #f7f7ff;
+  border: 1px solid #e8e7f6;
+  color: #4a536a;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.explanation strong {
+  color: #5548cb;
+}
+
+/* Footer */
+footer {
+  padding: 28px 12px;
+  text-align: center;
+  color: #8991a5;
+  font-size: 12px;
+}
+
+/* Visibility */
+[hidden] {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  .container {
+    width: 92%;
+  }
+
+  .quantum-settings {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bar-row {
+    grid-template-columns: 75px minmax(0, 1fr) 65px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  .topbar {
+    padding: 14px 5%;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .intro {
+    padding: 32px 0 22px;
+  }
+
+  .panel {
+    padding: 17px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .settings {
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    padding: 12px;
+  }
+
+  .metric strong {
+    font-size: 19px;
+  }
+
+  .actions > button {
+    flex: 1 1 100%;
+  }
+
+  th, td {
+    padding: 11px 9px;
+  }
+}
